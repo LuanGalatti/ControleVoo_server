@@ -1,3 +1,4 @@
+
 public class Assento {
 
     private int numero;

@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 
 public class ControladorVoo {
@@ -12,7 +13,7 @@ public class ControladorVoo {
         }
     }
 
-    public int VerificarStatus(String vooDesejado, int assento) {
+    public int verificarStatus(String vooDesejado, int assento) {
         int disponibilidade;
         Voo vooEncontrado;
         Assento assentoDesejado;
@@ -33,6 +34,18 @@ public class ControladorVoo {
             disponibilidade = 1;
         }
         return disponibilidade;
+    }
+
+    public int marcarVoo(String vooDesejado, int assento) {
+        int resultado = 4;
+        int disponibilidade = verificarStatus(vooDesejado, assento);
+        if (disponibilidade == 0) {
+            voos.get((Integer.parseInt(vooDesejado.substring(1)) - 1)).getAssentos().get(assento - 1).setDisponivel(false);
+
+        } else {
+            resultado = disponibilidade;
+        }
+        return resultado;
     }
 
     public Voo procurarVoo(String codigo) {
