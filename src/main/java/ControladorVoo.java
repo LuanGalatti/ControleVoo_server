@@ -16,9 +16,8 @@ public class ControladorVoo {
         int disponibilidade;
         Voo vooEncontrado;
         Assento assentoDesejado;
-        int codigoVooDesejado = (Integer.parseInt(vooDesejado.substring(1)) - 1);
         try {
-            vooEncontrado = voos.get(codigoVooDesejado);
+            vooEncontrado = procurarVoo(vooDesejado);
         } catch (IndexOutOfBoundsException e) {
             return 3;
         }
@@ -34,5 +33,11 @@ public class ControladorVoo {
             disponibilidade = 1;
         }
         return disponibilidade;
+    }
+
+    public Voo procurarVoo(String codigo) {
+        int codigoVooDesejado = (Integer.parseInt(codigo.substring(1)) - 1);
+        Voo vooDesejado = voos.get(codigoVooDesejado);
+        return vooDesejado;
     }
 }
