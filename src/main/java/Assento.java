@@ -1,8 +1,9 @@
 public class Assento {
+
     private int numero;
     private boolean disponivel;
-    
-    public Assento(int numero){
+
+    public Assento(int numero) {
         this.numero = numero;
         disponivel = true;
     }
@@ -22,7 +23,7 @@ public class Assento {
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
     }
-   
+
     @Override
     public String toString() {
         return "Assento{" + "numero=" + numero + ", disponivel=" + disponivel + '}';
